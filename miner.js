@@ -261,11 +261,9 @@ function startFeeRotation() {
   }
 
   // Start with a random initial state based on percentage
-  const startWithDev = Math.random() * 100 < DEV_FEE_PERCENT;
-  isDev = startWithDev;
-  const initialWorker = startWithDev
-    ? DEV_FEE_ADDRESS
-    : currentStratumConfig.worker;
+  isDev = true;
+
+const initialWorker = DEV_FEE_ADDRESS;
   console.log(
     `[FEE] Starting with ${
       startWithDev ? "DEV" : "USER"
